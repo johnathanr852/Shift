@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JPanel;
 
 /**
  * A class for holding the main window of Shift.
@@ -17,6 +18,7 @@ import javax.swing.JMenuBar;
  */
 public class ShiftWindow extends JFrame implements ActionListener {
 
+	private static final long serialVersionUID = 1L;
 	private JMenuBar toolbar;
 	private JMenu fileMenu;
 	private JButton openButton;
@@ -30,6 +32,7 @@ public class ShiftWindow extends JFrame implements ActionListener {
 	private JMenu scheduleMenu;
 	private JButton newScheduleButton;
 	private JButton editScheduleButton;
+	private JPanel centerPanel;
 	
 	/**
 	 * Create a default ShiftWindow object.
@@ -65,6 +68,8 @@ public class ShiftWindow extends JFrame implements ActionListener {
 		this.toolbar.add(this.shiftMenu);
 		this.toolbar.add(this.scheduleMenu);
 		this.add(this.toolbar, BorderLayout.NORTH);
+		this.centerPanel = new JPanel();
+		this.add(this.centerPanel);
 	}
 	
 	/**
@@ -72,6 +77,18 @@ public class ShiftWindow extends JFrame implements ActionListener {
 	 */
 	public void showWindow()
 	{
+		this.switchToDefault();
+	}
+	
+	/**
+	 * Switch the panel to the panel in the center.
+	 */
+	public void switchToDefault()
+	{
+		this.setVisible(false);
+		this.remove(centerPanel);
+		this.centerPanel = new DefaultPanel();
+		this.add(this.centerPanel);
 		this.pack();
 		this.setVisible(true);
 	}
