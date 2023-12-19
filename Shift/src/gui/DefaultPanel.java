@@ -16,13 +16,16 @@ public class DefaultPanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private JTextArea defaultText;
+	private ShiftWindow linkedFrame;
 	
 	/**
 	 * Create the default panel.
+	 * @param linkedWindow - the currently linked frame (aka the frame that is using this window).
 	 */
-	public DefaultPanel()
+	public DefaultPanel(ShiftWindow linkedFrame)
 	{
 		super();
+		this.linkedFrame = linkedFrame;
 		this.defaultText = new JTextArea(
 				"No schedule currently loaded. Load a schedule via File -> Open, or "
 				+ "create a new schedule via Schedule -> New Schedule.");
@@ -48,5 +51,14 @@ public class DefaultPanel extends JPanel {
 	public JTextArea getTextArea()
 	{
 		return this.defaultText;
+	}
+	
+	/**
+	 * Get the currently linked frame.
+	 * @return the currently linked frame.
+	 */
+	public ShiftWindow getCurrentLinkedFrame()
+	{
+		return this.linkedFrame;
 	}
 }

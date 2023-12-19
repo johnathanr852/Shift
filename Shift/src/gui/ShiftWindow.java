@@ -87,7 +87,7 @@ public class ShiftWindow extends JFrame implements ActionListener {
 	{
 		this.setVisible(false);
 		this.remove(centerPanel);
-		this.centerPanel = new DefaultPanel();
+		this.centerPanel = new DefaultPanel(this);
 		this.add(this.centerPanel);
 		this.pack();
 		this.setVisible(true);
@@ -208,6 +208,15 @@ public class ShiftWindow extends JFrame implements ActionListener {
 	public JButton getEditScheduleButton()
 	{
 		return this.editScheduleButton;
+	}
+	
+	/**
+	 * Get the current center panel.
+	 * @return the current center panel.
+	 */
+	public JPanel getCenterPanel()
+	{
+		return this.centerPanel;
 	}
 	
 	@Override
