@@ -260,4 +260,28 @@ public class Shift implements Serializable{
 			return false;
 		}
 	}
+	
+	/**
+	 * Returns a string representation of the shift.
+	 * 
+	 * @return a string representation of the shift.
+	 */
+	public String toString()
+	{
+		String outputString = "";
+		outputString += this.shiftName + "; ";
+		outputString += this.shiftDescription + "; ";
+		outputString += this.startDay + "-" + this.endDay + "; ";
+		outputString += this.startTime + "-" + this.endTime + "\n";
+		outputString += "Current Workers: ";
+		for (int i = 0; i < this.workingEmployees.size() - 1; i++)
+		{
+			String currentEmployeeName = this.workingEmployees.get(i).getName();
+			outputString += currentEmployeeName + ", ";
+		}
+		String lastEmployee = this.workingEmployees.get(this.workingEmployees.size() - 1)
+				.getName();
+		outputString += lastEmployee;
+		return outputString;
+	}
 }

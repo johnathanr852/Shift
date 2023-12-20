@@ -19,6 +19,7 @@ public class Employee implements Serializable {
 	
 	/**
 	 * Create a new employee, specifying name and age.
+	 * 
 	 * @param name - the name of the employee.
 	 * @param age - the age of the employee.
 	 */
@@ -32,6 +33,7 @@ public class Employee implements Serializable {
 	
 	/**
 	 * Create an employee, specifying name, age, current shifts, and notes.
+	 * 
 	 * @param name - the name of the employee.
 	 * @param age - the age of the employee.
 	 * @param currentShifts - the current shifts to be worked by the employee.
@@ -47,6 +49,7 @@ public class Employee implements Serializable {
 	
 	/**
 	 * Get the employee's name.
+	 * 
 	 * @return the employee's name.
 	 */
 	public String getName()
@@ -56,6 +59,7 @@ public class Employee implements Serializable {
 	
 	/**
 	 * Set the employee's name.
+	 * 
 	 * @param newName - the employee's new name.
 	 */
 	public void setName(final String newName)
@@ -65,6 +69,7 @@ public class Employee implements Serializable {
 	
 	/**
 	 * Get the employee's age.
+	 * 
 	 * @return the employee's age.
 	 */
 	public int getAge()
@@ -74,6 +79,7 @@ public class Employee implements Serializable {
 	
 	/**
 	 * Set the employee's age.
+	 * 
 	 * @param newAge - the employee's new age.
 	 */
 	public void setAge(final int newAge)
@@ -83,6 +89,7 @@ public class Employee implements Serializable {
 	
 	/**
 	 * Add a shift to the employee.
+	 * 
 	 * @param newShift - the new shift.
 	 */
 	public void addShift(final Shift newShift)
@@ -92,6 +99,7 @@ public class Employee implements Serializable {
 	
 	/**
 	 * Remove a shift from the employee.
+	 * 
 	 * @param shiftToRemove - the shift to remove.
 	 */
 	public void removeShift(final Shift shiftToRemove)
@@ -101,6 +109,7 @@ public class Employee implements Serializable {
 	
 	/**
 	 * Get the employee's current shifts.
+	 * 
 	 * @return the current shifts of the employee.
 	 */
 	public ArrayList<Shift> getShifts()
@@ -110,6 +119,7 @@ public class Employee implements Serializable {
 	
 	/**
 	 * Add a note to the employee's file.
+	 * 
 	 * @param newNote - the note to add to the employee's file.
 	 */
 	public void addNote(final String newNote)
@@ -120,11 +130,22 @@ public class Employee implements Serializable {
 	/**
 	 * "Hard-set" the employee's notes. Note that this will overwrite previously saved notes.
 	 * If you wish to modify the previously saved notes, use addNote instead.
+	 * 
 	 * @param newNote - the new note.
 	 */
 	public void setNote(final String newNote)
 	{
 		this.employeeNotes = newNote;
+	}
+	
+	/**
+	 * Get the employee's notes.
+	 * 
+	 * @return the employees notes.
+	 */
+	public String getNote()
+	{
+		return this.employeeNotes;
 	}
 	
 	/**
