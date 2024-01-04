@@ -49,7 +49,7 @@ public class ShiftWindow extends JFrame implements ActionListener {
 		this.employeeMenu = new JMenu("Employees");
 		this.addEmployeeButton = new JButton("Add Employee");
 		this.editEmployeeButton = new JButton("Edit Employee");
-		this.shiftMenu = new JMenu("Schedule");
+		this.shiftMenu = new JMenu("Shift");
 		this.addShiftButton = new JButton("Add Shift");
 		this.editShiftButton = new JButton("Edit Shift");
 		this.scheduleMenu = new JMenu("Schedule");
