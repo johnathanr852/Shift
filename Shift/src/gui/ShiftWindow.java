@@ -44,17 +44,29 @@ public class ShiftWindow extends JFrame implements ActionListener {
 		this.setLayout(new BorderLayout());
 		this.toolbar = new JMenuBar();
 		this.fileMenu = new JMenu("File");
+		this.fileMenu.addActionListener(this);
 		this.openButton = new JButton("Open");
+		this.openButton.addActionListener(this);
 		this.saveButton = new JButton("Save");
+		this.saveButton.addActionListener(this);
 		this.employeeMenu = new JMenu("Employees");
+		this.employeeMenu.addActionListener(this);
 		this.addEmployeeButton = new JButton("Add Employee");
+		this.addEmployeeButton.addActionListener(this);
 		this.editEmployeeButton = new JButton("Edit Employee");
+		this.editEmployeeButton.addActionListener(this);
 		this.shiftMenu = new JMenu("Shift");
+		this.shiftMenu.addActionListener(this);
 		this.addShiftButton = new JButton("Add Shift");
+		this.addShiftButton.addActionListener(this);
 		this.editShiftButton = new JButton("Edit Shift");
+		this.editShiftButton.addActionListener(this);
 		this.scheduleMenu = new JMenu("Schedule");
+		this.scheduleMenu.addActionListener(this);
 		this.newScheduleButton = new JButton("New Schedule");
+		this.newScheduleButton.addActionListener(this);
 		this.editScheduleButton = new JButton("Edit Schedule");
+		this.editScheduleButton.addActionListener(this);
 		this.fileMenu.add(this.openButton);
 		this.fileMenu.add(this.saveButton);
 		this.employeeMenu.add(this.addEmployeeButton);
@@ -81,13 +93,26 @@ public class ShiftWindow extends JFrame implements ActionListener {
 	}
 	
 	/**
-	 * Switch the panel to the panel in the center.
+	 * Switch the center panel to the default panel.
 	 */
 	public void switchToDefault()
 	{
 		this.setVisible(false);
 		this.remove(centerPanel);
 		this.centerPanel = new DefaultPanel(this);
+		this.add(this.centerPanel);
+		this.pack();
+		this.setVisible(true);
+	}
+	
+	/**
+	 * Switch the center panel to the new schedule panel.
+	 */
+	public void switchToNewSchedule()
+	{
+		this.setVisible(false);
+		this.remove(centerPanel);
+		this.centerPanel = new NewSchedulePanel(this);
 		this.add(this.centerPanel);
 		this.pack();
 		this.setVisible(true);
@@ -221,8 +246,10 @@ public class ShiftWindow extends JFrame implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+		if (e.getActionCommand().equals("New Schedule"))
+		{
+			this.switchToNewSchedule();
+		}
 	}
 
 }

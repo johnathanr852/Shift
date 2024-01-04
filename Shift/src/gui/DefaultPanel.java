@@ -22,7 +22,7 @@ public class DefaultPanel extends JPanel {
 	 * Create the default panel.
 	 * @param linkedWindow - the currently linked frame (aka the frame that is using this window).
 	 */
-	public DefaultPanel(ShiftWindow linkedFrame)
+	public DefaultPanel(final ShiftWindow linkedFrame)
 	{
 		super();
 		this.linkedFrame = linkedFrame;
